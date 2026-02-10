@@ -57,7 +57,7 @@ git push origin main
 ```
 
 ## 📧 Contact
-📩 **Email:** av457508@gmail.com  
+📩 **Email:** rkp1505.l@gmail.com  
 🔗 **LinkedIn:** https://www.linkedin.com/in/rajan-patel-5016a628a
 
 ---
