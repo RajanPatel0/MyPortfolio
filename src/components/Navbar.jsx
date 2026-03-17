@@ -50,7 +50,7 @@ const Navbar = () => {
         >
           {/* Title: Added 'truncate' or 'text-wrap' logic to prevent pushing the menu out */}
           <p className="text-white text-[16px] sm:text-[18px] font-bold cursor-pointer leading-tight truncate sm:whitespace-nowrap">
-            Full Stack Developer <span className="hidden xs:inline">|</span> 
+            Software Developer(FullStack) <span className="hidden xs:inline">|</span> 
             <br className="xs:hidden" /> 
             <span className="xs:ml-1">Backend Engineer</span>
           </p>
