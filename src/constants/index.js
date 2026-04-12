@@ -396,17 +396,17 @@ const projects = [
         color: "green-text-gradient",
       },
     ],
-   image: crtd,
-  imgFit: "object-contain",
- 
-  source_code_link: "",
-  liveUrl: "https://crtd.in/",
+    image: crtd,
+    imgFit: "object-contain",
+  
+    source_code_link: "",
+    liveUrl: "https://crtd.in",
   },
 
     {
     name: "InVolv IN",
     description:
-      "Nearest Store Discovery & Smart Demand Prediction(Inventory) Platform. It's a nearest-store product discovery platform using MERN, Redis, Leaflet, and OSRM routing – multi role with Implementation of real-time inventory visibility and Data AV-based demand forecasting for Stock analytics Engineering a scalable system architecture with Redis caching, session hande, high-frequency search optimization.",
+      "Nearest Store Discovery & Smart Demand Prediction(Inventory) Platform. It's a nearest-store product discovery platform using MERN, Redis, Leaflet, and OSRM routing – multi role with Implementation of real-time inventory visibility and ML-based demand forecasting for Stock analytics. Engineering a scalable system architecture with Redis caching, session hande, high-frequency search optimization.",
     tags: [
       {
         name: "MERN",
@@ -425,15 +425,27 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "Data Anakysis/Visualization",
+        name: "FastApi(statsmodels)",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Zustand",
+        color: "green-text-gradient",
+      },
+      {
+        name: "FCM Notifications",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Cron Jobs",
         color: "pink-text-gradient",
       },
     ],
-   image: involv,
-  imgFit: "object-contain",
- 
-  source_code_link: "https://github.com/RajanPatel0/InVolv",
-  liveUrl: "",
+    image: involv,
+    imgFit: "object-contain",
+  
+    source_code_link: "https://github.com/RajanPatel0/InVolv",
+    liveUrl: "https://involv.vercel.app",
   },
   {
     name: "Questify",
@@ -455,7 +467,7 @@ const projects = [
     ],
     image: questify,
     source_code_link: "https://github.com/RajanPatel0/FrostPro",
-    liveUrl: "https://frost-pro.vercel.app/",
+    liveUrl: "https://frost-pro.vercel.app",
   },
 
   {
@@ -478,11 +490,10 @@ const projects = [
     ],
     image: rtdt,
     imgFit: "object-contain",
-  imgHeight: "h-24",
-  imgWidth: "w-auto",
+    imgHeight: "h-24",
+    imgWidth: "w-auto",
     source_code_link: "https://github.com/RajanPatel0/Real-Time-Device-Tracker",
-        liveUrl: "https://real-time-device-tracker-9m2x.onrender.com/"
-
+    liveUrl: "https://real-time-device-tracker-9m2x.onrender.com"
   },
   
 ];
