@@ -4,15 +4,35 @@ import LOR from "../assets/lor.png";
 import hackmol from "../assets/hackmol.png";
 import udemy from "../assets/udemy.png";
 import ml from "../assets/mlcert.jpeg";
+import LOR_SF from "../assets/LOR_SF.jpg";
+import COA_SF from "../assets/COA_SF.jpg";
+import complete_SF from "../assets/complete_SF.jpg";
 
 const certificates = [
+  {
+    title:"Letter of Recommendation",
+    issuer: "Small Fare Pvt Ltd",
+    year: "2026",
+    image: LOR_SF,
+  },
+  {
+    title:"Letter of Recommendation",
+    issuer: "Wyreflow Technologies",
+    year: "2025",
+    image: LOR,
+  },
+  {
+    title: "Certificate Of Appreciation",
+    issuer: "Small Fare Pvt Ltd",
+    year: "2026",
+    image: COA_SF,
+  },
   {
     title: "Machine Learning Training",
     issuer: "IIT Madras Pravartak",
     year: "2025",
     image: ml,
   },
-  
   {
     title: "Web Development",
     issuer: "Udemy - Proper Dot Institute",
@@ -24,12 +44,6 @@ const certificates = [
     issuer: "NIT Jalandhar",
     year: "2025",
     image: hackmol,
-  },
-  {
-    title:"Letter of Recommendation",
-    issuer: "Wyreflow Technologies",
-    year: "2025",
-    image: LOR,
   },
 ];
 

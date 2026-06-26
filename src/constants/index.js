@@ -10,6 +10,8 @@ import questify from "../assets/questify.png";
 import crtdhome from "../assets/crtdHome.png";
 import Jobs from "../assets/Freshers-Jobs-Launch-Your-Tech-Section-Desktop.png";
 import involv from "../assets/involv2.png";
+import ptumni_home from "../assets/ptumni_home.png";
+import ptumni_in from "../assets/ptumni_in.png";
 // import docker from "../assets/docker.png";
 // import redis from "../assets/redis.png";
 // import postgres from "../assets/postgres.png";
@@ -278,8 +280,8 @@ const experiences = [
   company_name: "Small Fare Pvt Ltd",
   icon: smallfare,
   iconBg: "#E6DEDD",
-  date: "December 2025 - Present",
-   months: "3 Months",
+  date: "December 2025 - April 2026",
+   months: "4 Months",
   points: [
     "Worked as a Backend Developer using Node.js/React.js and Postgres.",
     "Built scalable backend services for an event management and ticket booking platform - Events Fare",
@@ -337,72 +339,60 @@ const testimonials = [
 ];
 const imageProjects = [
   {
-    id: 1,
-    image: crtdhome,
-    url: "https://crtd.in/",
-    title: "CRTD Technologies",
-    
+    id : 1,
+    image: ptumni_home,
+    url: "https://ptumni.vercel.app",
+    title: "PTUMNI",
     description: "",
   },
   {
-    id: 2,
-    image:Jobs,
-    url: "https://crtd.in/",
-    title: "Crtd Technologies",
+    id : 2,
+    image: ptumni_in,
+    url: "https://ptumni.vercel.app",
+    title: "PTUMNI",
     description: "",
   },
    {
     id : 4,
     image: involv,
-    url: "",
+    url: "https://involv.vercel.app",
     title: "InVolv IN",
     description: "",
   },
   {
     id: 3,
     image: questify,
-    url: "https://frost-pro.vercel.app/",
+    // url: "https://frost-pro.vercel.app/",
     title: "Questify",
     description: "",
   },
- 
+  {
+    id: 5,
+    image: rtdt,
+    url: "https://real-time-device-tracker-9m2x.onrender.com",
+    title: "Nearest Device Tracker",
+    description: "",
+  },
   
 ];
 
 const projects = [
-  {
-    name: "CRTD Technologies",
-    description:
-      "CRTD Technologies is a global technology company based in Bhopal, India, that helps businesses navigate the digital age. They offer a range of services including application development, ITES, mobility, cloud, big data, machine learning, and AI. The company focuses on helping clients transform their businesses for the digital age and improve efficiency and productivity. ",
-    tags: [
-      {
-        name: "MERN stack",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Backend",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Mobility",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Full Stack",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Frontend",
-        color: "green-text-gradient",
-      },
-    ],
-    image: crtd,
-    imgFit: "object-contain",
-  
-    source_code_link: "",
-    liveUrl: "https://crtd.in",
-  },
-
+    {
+      name: "PTUmni Alumni Connect",
+      description:
+        "An enterprise-level university ERP & interactive social media platform architected for IKGPTU, supporting 6 constituent campuses and 250+ affiliated colleges across Punjab. Features a multi-tenant role hierarchy including a Main Campus Super Admin with systemic oversight, dynamically provisioned sub-admins for college nodes, and an open LinkedIn-style ecosystem for alumni/students supporting posts, community interactions, peer-to-peer connections, and job/event matching systems.",
+      tags: [
+        { name: "Next.js", color: "blue-text-gradient" },
+        { name: "TypeScript", color: "green-text-gradient" },
+        { name: "PostgreSQL & Prisma", color: "pink-text-gradient" },
+        { name: "RBAC Multi-Tenant", color: "blue-text-gradient" },
+        { name: "Redis Caching", color: "green-text-gradient" },
+        { name: "OAuth", color: "pink-text-gradient" },
+      ],
+      image: ptumni_home,
+      imgFit: "object-contain",
+      liveUrl: "https://ptumni.vercel.app", // Keeping source_code_link hidden as requested
+    },
     {
     name: "InVolv IN",
     description:
@@ -469,7 +459,6 @@ const projects = [
     source_code_link: "https://github.com/RajanPatel0/FrostPro",
     liveUrl: "https://frost-pro.vercel.app",
   },
-
   {
     name: "Real-Time Device Tracker",
     description:
