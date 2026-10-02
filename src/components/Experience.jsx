@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
-import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -21,7 +21,7 @@ const ExperienceCard = ({ experience }) => {
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: experience.iconBg || "#E6DEDD" }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
           <img
@@ -38,12 +38,12 @@ const ExperienceCard = ({ experience }) => {
           className="text-secondary text-[16px] font-semibold"
           style={{ margin: 0 }}
         >
-          {experience.company_name}
+          {experience.company_name} {experience.months ? `• ${experience.months}` : ""}
         </p>
       </div>
 
       <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
+        {experience.points && experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
             className="text-white-100 text-[14px] pl-1 tracking-wider"
@@ -57,6 +57,9 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const { data } = usePortfolio();
+  const experiences = data?.experiences || [];
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -74,7 +77,7 @@ const Experience = () => {
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
-              key={`experience-${index}`}
+              key={experience.id || `experience-${index}`}
               experience={experience}
             />
           ))}
@@ -85,3 +88,4 @@ const Experience = () => {
 };
 
 export default SectionWrapper(Experience, "work");
+

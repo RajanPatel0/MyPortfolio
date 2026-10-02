@@ -1,0 +1,435 @@
+{
+  "header": {
+    "title": "Software Developer(FullStack) | Backend Engineer",
+    "subTitle": "Backend Engineer"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Rajan Patel",
+    "subheadings": [
+      "Backend-Focused Software Engineer",
+      "MERN Stack Developer",
+      "System Design & CI/CD Enthusiast",
+      "Building Scalable & Interactive Systems",
+      "Distributed Systems & Scalable Platforms",
+      "Elegant Full-Stack Builder"
+    ],
+    "socialLinks": {
+      "github": "https://github.com/RajanPatel0",
+      "leetcode": "https://leetcode.com/u/RajanPatel_",
+      "linkedin": "https://www.linkedin.com/in/rajan-patel-5016a628a",
+      "twitter": "https://x.com/Rajan_patel15",
+      "instagram": "https://www.instagram.com/rajanpatel._"
+    },
+    "resume": {
+      "url": "/uploads/1790966776915-RajanResume0.pdf",
+      "fileName": "RajanResume0.pdf"
+    }
+  },
+  "about": {
+    "subText": "Introduction",
+    "headText": "Overview",
+    "bio": "Final-year B.Tech CSE student (IKGPTU, 2023–2027, CGPA 8.50) focused on backend and distributed systems. I've shipped production code across event-driven microservices (Kafka), dual-database consistency (Cassandra + PostgreSQL), payment webhook infrastructure, geospatial search, ML-backed forecasting, and LLM-orchestrated automation — not toy versions of these, the real failure-mode-handling versions.\n\nI care most about the parts of a system most people skip: idempotency, race conditions, data consistency under concurrent writes, and what happens when the \"happy path\" breaks.",
+    "email": "rkp1505.l@gmail.com",
+    "image": "/uploads/1790970034313-me.jpg",
+    "services": [
+      {
+        "id": "s1",
+        "title": "Software Engineer",
+        "icon": "/src/assets/backend.png"
+      },
+      {
+        "id": "s2",
+        "title": "AI/ML Engineer",
+        "icon": "/src/assets/creator.png"
+      },
+      {
+        "id": "s3",
+        "title": "Backend Developer",
+        "icon": "/src/assets/devops.png"
+      },
+      {
+        "id": "s4",
+        "title": "Fullstack Developer",
+        "icon": "/src/assets/mobile.png"
+      }
+    ]
+  },
+  "experiences": [
+    {
+      "id": "exp1",
+      "title": "Backend Developer",
+      "company_name": "Small Fare Pvt Ltd",
+      "icon": "/src/assets/sf.png",
+      "iconBg": "#E6DEDD",
+      "date": "December 2025 - April 2026",
+      "months": "4 Months",
+      "points": [
+        "Worked as a Backend Developer using Node.js/React.js and Postgres.",
+        "Built scalable backend services for an event management and ticket booking platform - Events Fare",
+        "Implemented secure authentication, session management with Redis, role-based access for users, organizers, admins.",
+        "Developed modules include event management, booking, ticketing, payments, wallet, loyalty, and notifications.",
+        "Used Kafka for async processing and Docker for containerized deployment."
+      ]
+    },
+    {
+      "id": "exp2",
+      "title": "Mern Stack Developer",
+      "company_name": "Wyreflow Technologies",
+      "icon": "/src/assets/wyreflow.jpg",
+      "iconBg": "#E6DEDD",
+      "date": "July 2025 - October 2025",
+      "months": "3 Months",
+      "points": [
+        "Developing and maintaining web applications using Mern Stack & backend technologies.",
+        "Built MERN-based job and career guidance platform with student, admin, and sub-admin modules.",
+        "Implemented secure authentication, job posting workflows, subscriptions, and role-based access control.",
+        "Integrated and worked with backend services using MERN, JWT, and Razorpay",
+        "Participating in code reviews and providing constructive feedback to other developers."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1790967224116",
+      "name": "Onwards AI",
+      "description": "• Built a voice-guided AI browser agent combining WebSpeech API, Groq Llama 3.3 LLM inference, and\ndeterministic DOM automation.\n• Cut LLM payload to 70% by two-stage token-budget pipeline (DOM purification + 24K-char backend truncation).\n• Eliminated selector hallucinations to 0% using a deterministic data-unstuck-id DOM-tagging & routing engine.",
+      "tags": [
+        {
+          "name": "React",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Node.js",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Express Groq/Gemini API",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "WebSpeech API",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "html2canvas",
+          "color": "blue-text-gradient"
+        }
+      ],
+      "image": "/uploads/1790969945903-Screenshot_2026-10-03_010848.png",
+      "liveUrl": "",
+      "source_code_link": "https://github.com/HackBots3/Onward"
+    },
+    {
+      "id": "proj1",
+      "name": "IKGPTU Alumni Platform",
+      "description": "• Architected a multi-tenant portal scaling across 6 campuses & 250+ colleges, isolating data across 30+ relational\nmodels via indexed foreign keys.\n• Built a FK-based data normalization engine that collapsed 40+ branch & 250+ company variants across\n5000+ records via atomic Prisma transactions, raising filter precision to 100%.\n• Built a keyset-paginated notification worker processing 10K notifications in 2.39s, plus a rate-throttled SMTP\npipeline with zero bounces.",
+      "tags": [
+        {
+          "name": "Next.js",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "TypeScript",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "PostgreSQL & Prisma",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "RBAC Multi-Tenant",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Redis Caching",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "OAuth",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Sentry",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "SMTP",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "MySQL",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "",
+          "color": "blue-text-gradient"
+        }
+      ],
+      "image": "/uploads/1790966894617-Screenshot__673_.png",
+      "liveUrl": "https://alumni.ptu.ac.in",
+      "source_code_link": ""
+    },
+    {
+      "id": "proj2",
+      "name": "InVolv IN",
+      "description": "Nearest Store Discovery & Smart Demand Prediction(Inventory) Platform.\n• Built a geospatial discovery engine using MongoDB $geoNear, Atlas fuzzy $search for real-time vendor matching.\n• Shipped an ML demand-forecasting service (FastAPI, SimpleExpSmoothing) with Redis-cached (24h)\nresponses for price-trend prediction.\n• Built a real-time analytics pipeline (Redis Hashes/Sets) and cronjob for automated restock FCM alerts.",
+      "tags": [
+        {
+          "name": "MERN",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Leaflet Map",
+          "color": "green-text-gradient"
+        },
+        {
+          "name": "OSRM",
+          "color": "pink-text-gradient"
+        },
+        {
+          "name": "Redis",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "FastApi(statsmodels)",
+          "color": "pink-text-gradient"
+        },
+        {
+          "name": "Zustand",
+          "color": "green-text-gradient"
+        },
+        {
+          "name": "FCM Notifications",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Cron Jobs",
+          "color": "pink-text-gradient"
+        }
+      ],
+      "image": "/src/assets/involv2.png",
+      "source_code_link": "https://github.com/RajanPatel0/InVolv",
+      "liveUrl": "https://involv.vercel.app"
+    },
+    {
+      "id": "proj4",
+      "name": "Real-Time Device Tracker",
+      "description": "Real-time location tracking and collaboration System It's a real-time multi-device tracking system using Socket.IO, enabling live location updates for unlimited devices. Integrated with Leaflet.js maps to render device pins and continuously update latitude–longitude changes.Having bi-directional real-time communication and deployed the platform on Render.",
+      "tags": [
+        {
+          "name": "React",
+          "color": "blue-text-gradient"
+        },
+        {
+          "name": "Leaflet.js",
+          "color": "green-text-gradient"
+        },
+        {
+          "name": "Node.js",
+          "color": "pink-text-gradient"
+        }
+      ],
+      "image": "/src/assets/rtdt.png",
+      "source_code_link": "https://github.com/RajanPatel0/Real-Time-Device-Tracker",
+      "liveUrl": "https://real-time-device-tracker-9m2x.onrender.com"
+    }
+  ],
+  "technologies": [
+    {
+      "name": "C",
+      "icon": "/src/assets/tech/c.png"
+    },
+    {
+      "name": "C++",
+      "icon": "/src/assets/tech/cpp.png"
+    },
+    {
+      "name": "n8n Ai Agent",
+      "icon": "/src/assets/n8n.png"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "/src/assets/tech/javascript.png"
+    },
+    {
+      "name": "React JS",
+      "icon": "/src/assets/tech/reactjs.png"
+    },
+    {
+      "name": "Redux Toolkit",
+      "icon": "/src/assets/tech/redux.png"
+    },
+    {
+      "name": "Redis",
+      "icon": "/src/assets/redis.png"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "/src/assets/tech/tailwind.png"
+    },
+    {
+      "name": "Node JS",
+      "icon": "/src/assets/tech/nodejs.png"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "/src/assets/tech/mongodb.png"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "/src/assets/postgres.png"
+    },
+    {
+      "name": "Express",
+      "icon": "/src/assets/tech/express.png"
+    },
+    {
+      "name": "Python",
+      "icon": "/src/assets/tech/python.png"
+    },
+    {
+      "name": "Git",
+      "icon": "/src/assets/tech/git.png"
+    },
+    {
+      "name": "DevOps",
+      "icon": "/src/assets/devops.png"
+    },
+    {
+      "name": "Docker",
+      "icon": "/src/assets/docker.png"
+    },
+    {
+      "name": "GitHub",
+      "icon": "/src/assets/tech/github.png"
+    },
+    {
+      "name": "Postman",
+      "icon": "/src/assets/tech/postman.png"
+    },
+    {
+      "name": "SQL",
+      "icon": "/src/assets/tech/sql.svg"
+    },
+    {
+      "name": "Linux",
+      "icon": "/src/assets/linux.png"
+    },
+    {
+      "id": "tech-1790970313578",
+      "name": "Next JS",
+      "icon": "/uploads/1790970324535-next.png"
+    },
+    {
+      "id": "tech-1790970333313",
+      "name": "MySQL",
+      "icon": "/uploads/1790970337854-mys.png"
+    },
+    {
+      "id": "tech-1790970390243",
+      "name": "Cassandra DB",
+      "icon": "/uploads/1790970402665-cassandra.png"
+    },
+    {
+      "id": "tech-1790970397321",
+      "name": "Kafka",
+      "icon": "/uploads/1790970406153-kafka.webp"
+    },
+    {
+      "id": "tech-1790970456863",
+      "name": "AWS",
+      "icon": "/uploads/1790970461541-aws.jpg"
+    },
+    {
+      "id": "tech-1790970622862",
+      "name": "Firebase FCM",
+      "icon": "/uploads/1790970626596-fcm.png"
+    }
+  ],
+  "educations": [
+    {
+      "id": "edu1",
+      "degree": "Bachelor of Technology",
+      "branch": "Computer Science & Engineering",
+      "marks": "CGPA : 8.50 / 10",
+      "name": "I.K.G. Punjab Technical University, Jalandhar",
+      "year": "(2023 - 2027)",
+      "image": "/src/assets/ptu.webp"
+    },
+    {
+      "id": "edu2",
+      "degree": "12th Grade",
+      "branch": "Science",
+      "marks": "Percentage : 95.00 %",
+      "name": "Dasmesh Senior Secondary School, Ludhiana",
+      "year": "2023",
+      "image": "/src/assets/pseb.webp"
+    },
+    {
+      "id": "edu3",
+      "degree": "10th Grade",
+      "branch": "Regular",
+      "marks": "Percentage : 99.00 %",
+      "name": "M.V.M High School, Ludhiana",
+      "year": "2021",
+      "image": "/src/assets/pseb.webp"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert1",
+      "title": "Letter of Recommendation",
+      "issuer": "Small Fare Pvt Ltd",
+      "year": "2026",
+      "image": "/src/assets/LOR_SF.jpg"
+    },
+    {
+      "id": "cert2",
+      "title": "Letter of Recommendation",
+      "issuer": "Wyreflow Technologies",
+      "year": "2025",
+      "image": "/src/assets/lor.png"
+    },
+    {
+      "id": "cert3",
+      "title": "Certificate Of Appreciation",
+      "issuer": "Small Fare Pvt Ltd",
+      "year": "2026",
+      "image": "/src/assets/COA_SF.jpg"
+    },
+    {
+      "id": "cert4",
+      "title": "Machine Learning Training",
+      "issuer": "IIT Madras Pravartak",
+      "year": "2025",
+      "image": "/src/assets/mlcert.jpeg"
+    },
+    {
+      "id": "cert5",
+      "title": "Web Development",
+      "issuer": "Udemy - Proper Dot Institute",
+      "year": "2024",
+      "image": "/src/assets/udemy.png"
+    },
+    {
+      "id": "cert6",
+      "title": "Hackmol 6.0 Hackathon",
+      "issuer": "NIT Jalandhar",
+      "year": "2025",
+      "image": "/src/assets/hackmol.png"
+    }
+  ],
+  "profiles": [
+    {
+      "name": "GitHub",
+      "icon": "/src/assets/tech/github.png",
+      "link": "https://github.com/RajanPatel0"
+    },
+    {
+      "name": "LeetCode",
+      "icon": "/src/assets/leetcode.jpg",
+      "link": "https://leetcode.com/u/RajanPatel_/"
+    }
+  ]
+}

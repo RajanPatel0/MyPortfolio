@@ -5,33 +5,42 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { TicoCanvas } from "./canvas";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { usePortfolio } from "../context/PortfolioContext";
 
 import {
   BsTwitter,
   BsGithub,
-  BsDiscord,
-    BsYoutube,
   BsInstagram,
   BsLinkedin,
-  BsFacebook,
 } from "react-icons/bs";
+import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
+  const { data } = usePortfolio();
+  const heroData = data?.hero || {};
+  const socialLinks = heroData.socialLinks || {};
+
+  // Default fallback words if empty
+  const subheadings =
+    heroData.subheadings && heroData.subheadings.length > 0
+      ? heroData.subheadings
+      : [
+          "JS to C++ — Fluent Thinker",
+          "MERN Stack Developer",
+          "System Design & CI/CD Enthusiast",
+          "Building Scalable & Interactive Systems",
+        ];
+
   const [text] = useTypewriter({
-    words: [
-     "MERN Stack Developer",
-  "System Design & CI/CD Enthusiast",
-  "Building Scalable & Interactive Systems",
-  "Code + Logic Driven",
-  "Elegant Full-Stack Builder",
-  "In Code We Trust",
-  "Pixels by Day, Lifts by Night",
-  "JS to C++ — Fluent Thinker",
-  "Web Builder, Line by Line"
-    ],
+    words: subheadings,
     loop: true,
-    delaySpeed: 1000,
+    delaySpeed: 1200,
   });
+
+  const name = heroData.name || "Rajan Patel";
+  const nameParts = name.split(" ");
+  const firstName = nameParts[0] || "Rajan";
+  const restName = nameParts.slice(1).join(" ") || "Patel";
 
   return (
     <section className="relative w-full h-screen mx-auto">
@@ -45,9 +54,9 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm{" "}
+            {heroData.greeting || "Hi, I'm"}{" "}
             <span className="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
-              Rajan <span className="hidden sm:inline">Patel</span>
+              {firstName} <span className="hidden sm:inline">{restName}</span>
             </span>
           </h1>
 
@@ -76,26 +85,56 @@ const Hero = () => {
         </a>
       </div>
 
-      <div className="absolute right-5 top-1/2 -translate-y-1/2 flex flex-col gap-5 items-center md:mt-10 mt-5 md:gap-12">
-          <Link target="_blank" to="https://github.com/RajanPatel0">
-          <BsGithub size={30} className="icon hover:text-[#494646] hover:-translate-y-1 transition-all duration-100" />
+      {/* Right side vertical social strip */}
+      <div className="absolute right-5 top-1/2 -translate-y-1/2 flex flex-col gap-5 items-center md:mt-10 mt-5 md:gap-8 z-10 bg-black/30 backdrop-blur-sm p-2 rounded-full border border-white/5">
+        {/* 1. GitHub */}
+        <Link
+          target="_blank"
+          to={socialLinks.github || "https://github.com/RajanPatel0"}
+          title="GitHub Profile"
+        >
+          <BsGithub size={28} className="icon hover:text-[#494646] hover:-translate-y-1 transition-all duration-100" />
         </Link>
 
-        <Link target="_blank" to="https://www.linkedin.com/in/rajan-patel-5016a628a">
-          <BsLinkedin size={30} className="icon hover:text-[#0e76a8] hover:-translate-y-1 transition-all duration-100" />
+        {/* 2. LeetCode (Directly below GitHub, above LinkedIn) */}
+        <Link
+          target="_blank"
+          to={socialLinks.leetcode || "https://leetcode.com/u/RajanPatel_/"}
+          title="LeetCode Profile"
+        >
+          <SiLeetcode size={28} className="icon hover:text-[#FFA116] hover:-translate-y-1 transition-all duration-100" />
         </Link>
 
-        <Link target="_blank" to="https://x.com/Rajan_patel15">
-          <BsTwitter size={30} className="icon hover:text-[#1DA1F2] hover:-translate-y-1 transition-all duration-100" />
+        {/* 3. LinkedIn */}
+        <Link
+          target="_blank"
+          to={socialLinks.linkedin || "https://www.linkedin.com/in/rajan-patel-5016a628a"}
+          title="LinkedIn Profile"
+        >
+          <BsLinkedin size={28} className="icon hover:text-[#0e76a8] hover:-translate-y-1 transition-all duration-100" />
         </Link>
 
-        <Link target="_blank" to="https://www.instagram.com/rajanpatel._/">
-          <BsInstagram size={30} className="icon hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-100" />
+        {/* 4. Twitter / X */}
+        <Link
+          target="_blank"
+          to={socialLinks.twitter || "https://x.com/Rajan_patel15"}
+          title="Twitter / X Profile"
+        >
+          <BsTwitter size={28} className="icon hover:text-[#1DA1F2] hover:-translate-y-1 transition-all duration-100" />
         </Link>
 
+        {/* 5. Instagram */}
+        <Link
+          target="_blank"
+          to={socialLinks.instagram || "https://www.instagram.com/rajanpatel._/"}
+          title="Instagram Profile"
+        >
+          <BsInstagram size={28} className="icon hover:text-[#E1306C] hover:-translate-y-1 transition-all duration-100" />
+        </Link>
       </div>
     </section>
   );
 };
 
 export default Hero;
+
