@@ -1,22 +1,53 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { defaultPortfolioData } from "../data/defaultData";
+import { defaultPortfolioData, resolveAsset } from "../data/defaultData";
+import savedPortfolioData from "../data/portfolioData.json";
 
 const PortfolioContext = createContext(null);
 
 const STORAGE_KEY = "portfolio_custom_data_v1";
 
-// Deep merge helper to preserve default image imports if not overwritten
+// Deep merge helper to preserve default image imports and resolve production asset paths
 function mergeData(defaultObj, customObj) {
   if (!customObj || typeof customObj !== "object") return defaultObj;
   const result = { ...defaultObj, ...customObj };
 
   // For sections that are arrays (like projects, experiences, etc.), if customObj has it, use it
-  if (customObj.experiences) result.experiences = customObj.experiences;
-  if (customObj.projects) result.projects = customObj.projects;
-  if (customObj.technologies) result.technologies = customObj.technologies;
-  if (customObj.educations) result.educations = customObj.educations;
-  if (customObj.certificates) result.certificates = customObj.certificates;
-  if (customObj.profiles) result.profiles = customObj.profiles;
+  if (customObj.experiences) {
+    result.experiences = customObj.experiences.map((exp) => ({
+      ...exp,
+      icon: resolveAsset(exp.icon),
+    }));
+  }
+  if (customObj.projects) {
+    result.projects = customObj.projects.map((proj) => ({
+      ...proj,
+      image: resolveAsset(proj.image),
+    }));
+  }
+  if (customObj.technologies) {
+    result.technologies = customObj.technologies.map((tech) => ({
+      ...tech,
+      icon: resolveAsset(tech.icon),
+    }));
+  }
+  if (customObj.educations) {
+    result.educations = customObj.educations.map((edu) => ({
+      ...edu,
+      image: resolveAsset(edu.image),
+    }));
+  }
+  if (customObj.certificates) {
+    result.certificates = customObj.certificates.map((cert) => ({
+      ...cert,
+      image: resolveAsset(cert.image),
+    }));
+  }
+  if (customObj.profiles) {
+    result.profiles = customObj.profiles.map((prof) => ({
+      ...prof,
+      icon: resolveAsset(prof.icon),
+    }));
+  }
 
   // For nested objects
   if (customObj.header) result.header = { ...defaultObj.header, ...customObj.header };
@@ -32,52 +63,62 @@ function mergeData(defaultObj, customObj) {
     result.about = {
       ...defaultObj.about,
       ...customObj.about,
-      services: customObj.about.services || defaultObj.about.services,
+      image: resolveAsset(customObj.about.image || defaultObj.about.image),
+      services: (customObj.about.services || defaultObj.about.services).map((s) => ({
+        ...s,
+        icon: resolveAsset(s.icon),
+      })),
     };
   }
 
   return result;
 }
 
+// Baseline data bundled with the application (persists to live site after git push)
+const bundledBaseData = mergeData(defaultPortfolioData, savedPortfolioData);
+
 export const PortfolioProvider = ({ children }) => {
   const [data, setData] = useState(() => {
-    // Initial check from localStorage for fast initial render
+    // Initial check from localStorage for fast initial render if custom overrides exist
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        return mergeData(defaultPortfolioData, JSON.parse(saved));
+        return mergeData(bundledBaseData, JSON.parse(saved));
       }
     } catch (e) {
       console.warn("Failed reading localStorage", e);
     }
-    return defaultPortfolioData;
+    return bundledBaseData;
   });
 
   const [saveStatus, setSaveStatus] = useState("idle"); // idle | saving | saved | error
   const [isServerConnected, setIsServerConnected] = useState(false);
 
-  // Sync from server on load
+  // Sync from server on load (local Vite dev server or backend API)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch("/api/portfolio-data");
         if (res.ok) {
-          const serverData = await res.json();
-          if (serverData && !serverData.notFound) {
-            const merged = mergeData(defaultPortfolioData, serverData);
-            setData(merged);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-            setIsServerConnected(true);
-            return;
+          const contentType = res.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            const serverData = await res.json();
+            if (serverData && !serverData.notFound) {
+              const merged = mergeData(bundledBaseData, serverData);
+              setData(merged);
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+              setIsServerConnected(true);
+              return;
+            }
           }
-          setIsServerConnected(true);
         }
       } catch (err) {
-        console.log("Local API not running or static mode - using localStorage", err);
+        // Static hosting mode (Vercel/GitHub Pages): bundledBaseData is already active!
       }
     };
     fetchData();
   }, []);
+
 
   // Save changes to server and localStorage
   const updatePortfolioData = async (newDataOrFn) => {

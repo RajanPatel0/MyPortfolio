@@ -46,6 +46,61 @@ import {
   docker,
 } from "../assets";
 
+export const assetMap = {
+  "/src/assets/devops.png": devops,
+  "/src/assets/wyreflow.jpg": wyreflow,
+  "/src/assets/sf.png": smallfare,
+  "/src/assets/n8n.png": n8n,
+  "/src/assets/linux.png": linux,
+  "/src/assets/questify.png": questify,
+  "/src/assets/involv2.png": involv,
+  "/src/assets/ptumni_home.png": ptumni_home,
+  "/src/assets/rtdt.png": rtdt,
+  "/src/assets/Me.jpg": meImg,
+  "/src/assets/lor.png": lorImg,
+  "/src/assets/hackmol.png": hackmolImg,
+  "/src/assets/udemy.png": udemyImg,
+  "/src/assets/mlcert.jpeg": mlImg,
+  "/src/assets/LOR_SF.jpg": lorSfImg,
+  "/src/assets/COA_SF.jpg": coaSfImg,
+  "/src/assets/backend.png": backend,
+  "/src/assets/creator.png": creator,
+  "/src/assets/mobile.png": mobile,
+  "/src/assets/tech/html.png": html,
+  "/src/assets/tech/css.png": css,
+  "/src/assets/tech/c.png": c,
+  "/src/assets/tech/cpp.png": cpp,
+  "/src/assets/tech/javascript.png": javascript,
+  "/src/assets/tech/reactjs.png": reactjs,
+  "/src/assets/tech/redux.png": redux,
+  "/src/assets/tech/tailwind.png": tailwind,
+  "/src/assets/tech/nodejs.png": nodejs,
+  "/src/assets/tech/express.png": express,
+  "/src/assets/tech/mongodb.png": mongodb,
+  "/src/assets/tech/git.png": git,
+  "/src/assets/tech/figma.png": figma,
+  "/src/assets/tech/selenium.png": selenium,
+  "/src/assets/tech/github.png": github,
+  "/src/assets/tech/python.png": python,
+  "/src/assets/tech/postman.png": postman,
+  "/src/assets/tech/sql.svg": sql,
+  "/src/assets/tech/npm.png": npm,
+  "/src/assets/leetcode.jpg": leetcode,
+  "/src/assets/ptu.webp": ptu,
+  "/src/assets/pseb.webp": pseb,
+  "/src/assets/redis.png": redis,
+  "/src/assets/postgres.png": postgres,
+  "/src/assets/docker.png": docker,
+};
+
+export function resolveAsset(src) {
+  if (!src) return src;
+  if (typeof src === "string" && assetMap[src]) {
+    return assetMap[src];
+  }
+  return src;
+}
+
 export const defaultPortfolioData = {
   header: {
     title: "Software Developer(FullStack) | Backend Engineer",
