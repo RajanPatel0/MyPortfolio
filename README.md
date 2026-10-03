@@ -51,6 +51,7 @@ npm start
 
 ## 📤 Deployment
 The portfolio is deployed on **Vercel**.
+Vercel rewrites page requests to the app entry point so routes such as `/admin` also work when opened directly or refreshed.
 To deploy manually, run:
 ```sh
 git push origin main
